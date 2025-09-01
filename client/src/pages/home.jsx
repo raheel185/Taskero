@@ -4,13 +4,13 @@ import Bannerillustration from '../assets/bannerImage.jpg'
 
 const Home = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 py-12 bg-gray-50">
+    <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 py-12 bg-[#f5ebe1]">
     {/* Left Content */}
-    <div className="text-center md:text-left max-w-lg space-y-6">
+    <div className="text-center md:text-left max-w-lg space-y-8">
       <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
         Your Smart Task Management Solution
       </h1>
-      <p className="text-lg text-gray-600">
+      <p className="text-lg text-gray-600 pb-4">
         Taskero helps you manage your daily tasks, set priorities, and stay focused — all in one place.
       </p>
       <Link
@@ -25,7 +25,7 @@ const Home = () => {
       <img
         src={Bannerillustration}
         alt="Project Management Illustration"
-        className="w-[500px] md:w-[600px] lg:w-[700px]"
+        className="w-[560px] md:w-[660px] lg:w-[780px]"
       />
     </div>
   </div>
