@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import Bannerillustration from '../assets/banner-illustration.svg'
+import Bannerillustration from '../assets/bannerImage.jpg'
 
 const Home = () => {
   return (
@@ -25,7 +25,7 @@ const Home = () => {
       <img
         src={Bannerillustration}
         alt="Project Management Illustration"
-        className="w-full max-w-md"
+        className="w-[500px] md:w-[600px] lg:w-[700px]"
       />
     </div>
   </div>
