@@ -15,7 +15,7 @@ const Home = () => {
       </p>
       <Link
         to="/signup"
-        className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition">
+        className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 transition">
   Start Managing Tasks
 </Link>
     </div>
