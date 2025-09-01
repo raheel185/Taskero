@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="bg-white shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
       {/* Logo / Brand */}
       <div>
-        <Link to="/" className="text-2xl font-bold text-blue-600 hover:text-blue-800">
+        <Link to="/" className="text-2xl font-bold text-black-600 hover:text-blue-800">
           Taskero
         </Link>
       </div>
