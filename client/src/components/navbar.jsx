@@ -12,7 +12,7 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links */}
-      <div className="flex gap-6">
+      <div className="flex gap-8">
         <Link 
           to="/" 
           className="text-gray-700 hover:text-blue-600 transition duration-200"
