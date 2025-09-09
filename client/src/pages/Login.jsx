@@ -4,13 +4,14 @@ import { useState } from 'react'
 const Login = () => {
 
   const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
 
   async function handleLogin(e){
 
     e.preventDefault()
 
-    console.log(email)
+    console.log(password)
   }
 
   return (
@@ -19,7 +20,7 @@ const Login = () => {
 
       <form onSubmit={handleLogin}>
           <input onChange={(e)=>setEmail(e.target.value)} type="email"  placeholder='Enter your email'/>
-          <input type="password"  placeholder='***********'/>
+          <input onChange={(e) => setPassword(e.target.value)} type="password"  placeholder='***********'/>
           <input type="submit" value="Login"/>
       </form>
 
