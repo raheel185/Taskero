@@ -13,8 +13,30 @@ userRouter.post("/login", async (req, res) => {
 
 userRouter.post("/register", async (req, res) => {
   try {
-    return res.json({ Testing: "Rest API Register" });
-  } catch (error) {}
+    const { email, password } = req.body;
+
+    // Check if user exists
+    let user = await UserModel.findOne({ email });
+    if (user) {
+      return res.json({ Testing: "User already Exists" });
+    }
+
+    // password hashing
+    const salt = await bcrypt.genSalt(10);
+    const hashPassword = await bcrypt.hash(password, salt);
+
+    // creating user
+    user = new UserModel({
+      email,
+      password: hashPassword,
+    });
+
+    await user.save();
+
+    return res.json({ abcd: user._id });
+  } catch (error) {
+    return res.json({ Testing: error.message });
+  }
 });
 
 export default userRouter;
