@@ -18,7 +18,7 @@ userRouter.post("/register", async (req, res) => {
     // Check if user exists
     let user = await UserModel.findOne({ email });
     if (user) {
-      return res.json({ Testing: "User already Exists" });
+      return res.json({ Testing: "User already Exists..." });
     }
 
     // password hashing
