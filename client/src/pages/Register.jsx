@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("")
+
+
 
   async function handleSignup(e) {
     e.preventDefault();
@@ -14,13 +17,21 @@ const Register = () => {
       return
     }
 
-    console.log("Email:", email);
-    console.log("Password:", password);
 
     try {
       
+      const res = await axios.post("http://localhost:5000/api/auth/register", {
+        email, password
+      })
+
+      console.log(res)
+
+      setMessage(res.data.message || "User Registered Successfully")
+
     } catch (error) {
       
+      setMessage(error.response?.data?.message || "Signup failed. Try again.");
+
     }
 
   }
@@ -31,6 +42,11 @@ const Register = () => {
         <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
           Create Your Account
         </h1>
+        {
+          message && (
+            <p className="text-center mb-4 text-sm text-red-600">{message}</p>
+          )
+        }
 
         <form onSubmit={handleSignup} className="space-y-4">
           <input
