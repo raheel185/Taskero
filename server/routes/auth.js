@@ -33,7 +33,12 @@ userRouter.post("/register", async (req, res) => {
 
     await user.save();
 
-    return res.json({ abcd: user._id });
+    // Create JWT token
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
+    });
+
+    return res.json({ token, abcd: user._id });
   } catch (error) {
     return res.json({ Testing: error.message });
   }
